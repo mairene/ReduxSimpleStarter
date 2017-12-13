@@ -1,15 +1,17 @@
+// Explicitly say you want access to React module in this file. Find library 'react' and assign to variable React
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 
-import App from './components/app';
-import reducers from './reducers';
+const API_KEY = 'AIzaSyC7qdDmQsOFBDXRN0imvOle1w9Qciq3uAU';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+// Create a new component. This comp should produce some HTML.
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+// ES6 const = declaring a variable that is the final variable; it's constant
+// App is a class, not an instance; can create instances eg. <App />
+// ES6 () => is equivalent to function() except def of 'this' is different
+const App = () => {
+	return <div>Hi!</div>;
+}
+
+// Take this comp's generated HTML and put it on the page (in the DOM).
+ReactDOM.render(<App />, document.querySelector('.container'));
